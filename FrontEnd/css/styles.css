@@ -1,0 +1,31 @@
+/* use element selector to select  all p elements for this style */
+p{
+    
+    color: blue;
+    font-size: 22px;
+}
+
+/* use class selector to define style for elemts*/
+
+.fancy{
+    color: blue;
+    border: 2px;
+    background-color: red;
+    border-radius: 8px;
+}
+
+.mun_oma{
+    background-color: aquamarine;
+}
+/* use id selector to define styles */
+#joku_tyyli{
+    margin: 100px;
+}
+.login_container{
+    width: 500px;
+    margin: 8px auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: skyblue;
+    padding: 8px;
+}
