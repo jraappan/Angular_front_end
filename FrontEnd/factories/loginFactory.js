@@ -1,4 +1,4 @@
-main_module.factory('loginFactory',function(){
+main_module.factory('loginFactory',function($http){
     var factory = {};
     
     factory.startLogin = function(data){
