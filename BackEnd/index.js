@@ -42,6 +42,10 @@ app.use('/friends',user);
 
 
 // *********** routers
+app.get('/logout',function(req,res){
+    req.session.destroy();
+    res.redirect('/');
+});
 app.get("/persons",function(req,res){
     queries.getAllPersons(req,res);
 });

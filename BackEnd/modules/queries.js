@@ -108,6 +108,7 @@ exports.loginFriend = function(req,res){
             res.send(502,{status:err.message});
         }else{
             if(data){
+            if(data){
                 req.session.kayttaja = data.username;
                 console.log('req.session.kayttaja - login tapahtuma:');
         console.log(req.session.kayttaja);
