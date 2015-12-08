@@ -6,6 +6,9 @@ main_module.factory('loginFactory',function($resource){
         var req = $resource('/friends/login',{},{'post':{method:'POST'}});
         return req.post(data).$promise;
     }
-    
+    factory.startRegister = function(data){
+         var req = $resource('/friends/register',{},{'post':{method:'POST'}});
+        return req.post(data).$promise;
+    }
     return factory;
 });
