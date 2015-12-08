@@ -108,7 +108,6 @@ exports.loginFriend = function(req,res){
             res.send(502,{status:err.message});
         }else{
             if(data){
-            if(data){
                 req.session.kayttaja = data.username;
                 console.log('req.session.kayttaja - login tapahtuma:');
         console.log(req.session.kayttaja);
@@ -126,6 +125,12 @@ exports.getFriendsByUsername = function(req,res){
         console.log('req.session.kayttaja:');
         console.log(req.session.kayttaja);
         //console.log(data.friends);
-        res.send(data.friends);
+        if(data){
+         res.send(data.friends);
+        }
+        else{
+            res.rediect('/');
+        }
+
     });
 }

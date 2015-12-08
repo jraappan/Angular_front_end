@@ -1,6 +1,6 @@
 <a href="/logout">Logout</a>
 <h1>Here is table data of the friends</h1>
-<table>
+<table class="table">
     <thead>
         <tr>
             <th>Name</th>
@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat='person in friendData'>
+        <tr class="success" ng-repeat='person in friendData'>
             <td>{{person.name}}</td>
             <td>{{person.address}}</td>
             <td>{{person.age}}</td>
