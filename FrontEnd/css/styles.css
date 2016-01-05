@@ -22,10 +22,46 @@ p{
     margin: 100px;
 }
 .login_container{
-    width: 500px;
+    width: 300px;
     margin: 8px auto;
     border: 2px solid black;
     border-radius: 5px;
-    background-color: skyblue;
-    padding: 8px;
+    background-color: #3465a4;
+    padding: 20px;
+}
+.myCenter{
+	text-align:center;
+}
+#flashWidth{
+    width:300px;
+    margin:auto;
+}
+
+vr1 {
+    display: block;
+    width:2px;
+    background-color:#3465a4;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:100px;
+}
+vr2 {
+    display: block;
+    width:2px;
+    background-color:#3465a4;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:104px;
+}
+.hr1 {
+    border: 1px solid #3465a4;
+    margin-top: 80px;
+    width:100%;
+}
+.hr2 {
+    border: 1px solid #3465a4;
+    width:100%;
+    margin-top: -18px;
 }

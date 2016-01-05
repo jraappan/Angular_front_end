@@ -1,0 +1,10 @@
+<a href="/logout">Logout</a>
+<a href="#/list">Näytä kaverit</a>
+<p class="myCenter">Lisää uusi kaveri</p>
+<form class='login_container'>
+    <input type="text" placeholder="Nimi" ng-model="name" class="form-control"><br/>
+    <input type="text" placeholder="osoite" ng-model='address' class="form-control"><br/>
+    <input type="text" placeholder="ikä" ng-model='age' class="form-control"><br/>
+    <input id="save" type="button" value="Lisää" ng-click='addClicked()' class="btn btn-default">
+</form>
+<div class="flash-style" id="flashWidth" flash-message="2000"></div> 

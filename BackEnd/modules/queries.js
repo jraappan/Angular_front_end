@@ -1,4 +1,7 @@
 var db = require('./database');
+var jwt = require('jsonwebtoken');
+var server = require('../index');
+
 // this function gets all documents from person collection
 exports.getAllPersons = function(req,res){
     
@@ -17,13 +20,18 @@ exports.getAllPersons = function(req,res){
 exports.saveNewPerson = function(req,res){
     
     var personTemp = new db.Person(req.body);
-    personTemp.save(function(err,ok){
-        db.Friends.update({username:req.body.user},
+    personTemp.save(function(err,newData){
+        db.Friends.update({username:req.session.kayttaja},
                          {$push:{'friends':personTemp._id}},
                          function(err,model){
             
-           //res.redirect('/persons.html');
-            res.send("Person added");
+            if(err){
+                
+                res.status(500).json({message:'Fail'});
+            }else{
+                
+                res.status(200).json({data:newData});
+            }
         });
 
     });
@@ -109,9 +117,11 @@ exports.loginFriend = function(req,res){
         }else{
             if(data){
                 req.session.kayttaja = data.username;
+                // create token
+                var token = jwt.sign(data,server.secret,{expiresIn:'2h'});
                 console.log('req.session.kayttaja - login tapahtuma:');
         console.log(req.session.kayttaja);
-                res.send(200,{status:"Ok"});
+                res.send(200,{status:"Ok",secret:token});
             }else{
                 res.send(401,{status:"Wrong username or password"});
             }
@@ -129,7 +139,7 @@ exports.getFriendsByUsername = function(req,res){
          res.send(data.friends);
         }
         else{
-            res.rediect('/');
+            res.redirect('/');
         }
 
     });

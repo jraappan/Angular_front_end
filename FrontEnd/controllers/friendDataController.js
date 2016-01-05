@@ -1,5 +1,5 @@
 main_module.controller('friendDataController',function($scope,friendDataFactory){
-    console.log('friendDataController loaded');
+   // console.log('friendDataController loaded');
     if(friendDataFactory.friendsArray.length === 0)
     {
         var response = friendDataFactory.getFriendData();

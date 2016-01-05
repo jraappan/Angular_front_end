@@ -7,7 +7,7 @@ main_module.factory('loginFactory',function($resource){
         return req.post(data).$promise;
     }
     factory.startRegister = function(data){
-         var req = $resource('/friends/register',{},{'post':{method:'POST'}});
+        var req = $resource('/persons',{},{'post':{method:'POST'}});
         return req.post(data).$promise;
     }
     return factory;

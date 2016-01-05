@@ -16,8 +16,11 @@ main_module.controller('controllerLogin',function($scope,loginFactory,$location)
         var waitPromise = loginFactory.startLogin(tmp);
         //Wait response from server
         waitPromise.then(function(data){
-            console.log(data);
+            console.log(data.secret);
+            sessionStorage['token'] = data.secret;
+            
             $location.path('/list');
+ 
         },function(data){
             $('.error').text('Wrong username or password');
         });
