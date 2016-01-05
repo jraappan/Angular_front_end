@@ -58,14 +58,7 @@ app.get('/logout',function(req,res){
 app.get("/persons",function(req,res){
     queries.getAllPersons(req,res);
 });
-app.get('/isLogged',function(req,res){
-    if(req.session.kayttaja){
-        res.status(200).send([{status:'Ok'}]);
-    }
-    else{
-        res.status(401).send([{status:'Unauthorized'}]);
-    }
-});
+
 
 
 
@@ -89,7 +82,14 @@ app.use(function(req,res,next){
 
 //----------------------------- rest api middlewares --------------------------//
 app.use('/persons',person);
-
+app.get('/isLogged',function(req,res){
+    if(req.session.kayttaja){
+        res.status(200).send([{status:'Ok'}]);
+    }
+    else{
+        res.status(401).send([{status:'Unauthorized'}]);
+    }
+});
 
 
 

@@ -3,9 +3,10 @@
 
 var main_module = angular.module('main_module',['ngRoute','ngResource','flash']);
 
-function loginRequired($q,$resource,$location){
+function loginRequired($q,$resource,$location,$http){
     // Create a promise
     var deferred = $q.defer();
+    $http.defaults.headers.common['x-access-token']=sessionStorage['token'];
     $resource('/isLogged').query().$promise.then(function success(){
         // Mark promise to be solved (or resolved)
         deferred.resolve();
