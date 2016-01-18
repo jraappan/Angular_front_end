@@ -1,8 +1,12 @@
-<h1>Diipa Daapa </h1>
-<hr class="hr1" />
-<hr class="hr2" />
-<vr1 />
-<vr2 />
+<!-- Rule 1 everything must go inside container class -->
+<div class="container">
+    <!-- Rule 2 every column must be inside a row -->
+    <div class="row">
+        <!-- Rule 3 columns are defined in row -->
+        <div style="background-color:red" class="col-sm-4 col-md-2 visible-lg">Col1</div>
+        <div style="background-color:blue" class="col-sm-4 col-md-5">Col2</div>
+        <div style="background-color:green" class="col-sm-4 col-md-5">Col3</div>
+    </div>
 <p class="myCenter">Kirjaudu sisään</p>
 <form class='login_container'>
     <input type="text" placeholder="username" ng-model="user" class="form-control"><br/>
@@ -12,3 +16,4 @@
     <!- bind the data from username textfield(use the variable 'user)-->
     <p>{{user}}</p>
 </form>
+</div>

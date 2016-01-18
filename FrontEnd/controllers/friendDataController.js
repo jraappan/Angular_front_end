@@ -1,4 +1,5 @@
 main_module.controller('friendDataController',function($scope,friendDataFactory){
+    $scope.name="by Jesse James";
    // console.log('friendDataController loaded');
     if(friendDataFactory.friendsArray.length === 0)
     {
